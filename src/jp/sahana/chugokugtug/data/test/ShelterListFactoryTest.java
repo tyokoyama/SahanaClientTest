@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import org.apache.http.HttpStatus;
 
+import android.util.Log;
+
 import jp.sahana.chugokugtug.data.Shelter;
 import jp.sahana.chugokugtug.data.ShelterList;
 import jp.sahana.chugokugtug.data.ShelterListFactory;
@@ -29,7 +31,7 @@ public class ShelterListFactoryTest extends TestCase {
 		assertEquals(shelter.getModifyDate(), "2011-04-24T15:43:52Z");
 		assertEquals(shelter.getName(), "faily tale");
 		assertEquals(shelter.getBuilding_name(), "サンモール日泉ビル");
-		assertEquals(shelter.getAddress(), "仙台市青葉区一番町２−７−３ http://blog1.fairy-tale.cc");
+		assertEquals(shelter.getAddress(), "仙台市青葉区一番町２−７−３ \rhttp://blog1.fairy-tale.cc");
 		assertEquals(shelter.getL3(), "一番町二丁目");
 		assertEquals(shelter.getL2(), "仙台市青葉区");
 		assertEquals(shelter.getL1(), "宮城県");
