@@ -14,7 +14,7 @@ public class ProjectListFactoryTest extends TestCase {
 
 	public void testCreate() {
 		SahanaHttpClient client = new SahanaHttpClient();
-		int iRet = client.getData("http://sahana.jp/eden/vol/project.xml");
+		int iRet = client.get("http://sahana.jp/eden/vol/project.xml");
 		
 		assertEquals(iRet, HttpStatus.SC_OK);
 		

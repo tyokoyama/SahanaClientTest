@@ -12,7 +12,7 @@ public class ProjectTaskFactoryTest extends TestCase {
 
 	public void testCreate() {
 		SahanaHttpClient client = new SahanaHttpClient();
-		int iRet = client.getData("http://sahana.jp/eden/project/project/3/task.xml");
+		int iRet = client.get("http://sahana.jp/eden/project/project/3/task.xml");
 		assertEquals(iRet, HttpStatus.SC_OK);
 		
 		ProjectTaskListFactory factory = new ProjectTaskListFactory();

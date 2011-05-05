@@ -16,7 +16,7 @@ public class ShelterListFactoryTest extends TestCase {
 
 	public void testCreate() {
 		SahanaHttpClient client = new SahanaHttpClient();
-		int iRet = client.getData("http://japan.sahanafoundation.org/eden/cr/shelter.xml");
+		int iRet = client.get("http://japan.sahanafoundation.org/eden/cr/shelter.xml");
 		assertEquals(iRet, HttpStatus.SC_OK);
 
 		ShelterListFactory factory = new ShelterListFactory();

@@ -12,7 +12,7 @@ public class SahanaHttpClientTest extends TestCase {
 	public void testGetData() {
 		SahanaHttpClient client = new SahanaHttpClient();
 		
-		int iRet = client.getData("http://sahana.jp/eden/vol/project.xml");
+		int iRet = client.get("http://sahana.jp/eden/vol/project.xml");
 		assertEquals(iRet, HttpStatus.SC_OK);
 		
 		assertNotNull(client.getResponse());
@@ -22,11 +22,11 @@ public class SahanaHttpClientTest extends TestCase {
 		assertTrue(response.length() > 0);
 		
 		// スキーマ指定が抜けている設定時のテスト
-		iRet = client.getData("japan.sahanafoundation.org/eden/vol/project.xml");
+		iRet = client.get("japan.sahanafoundation.org/eden/vol/project.xml");
 		assertEquals(iRet, -1);
 		
 		// 接続先設定に/を含めてしまって//になった時のテスト
-		iRet = client.getData("http://japan.sahanafoundation.org//eden/vol/project.xml");
+		iRet = client.get("http://japan.sahanafoundation.org//eden/vol/project.xml");
 		assertEquals(iRet, HttpStatus.SC_OK);
 		
 		response = client.getResponse();
@@ -34,8 +34,9 @@ public class SahanaHttpClientTest extends TestCase {
 		assertTrue(response.length() > 0);
 		
 		// 接続先がそもそも存在しない場合のテスト
-		iRet = client.getData("http://ore.no.testserver.com/eden/vol/project.xml");
+		iRet = client.get("http://ore.no.testserver.com/eden/vol/project.xml");
 		assertEquals(iRet, -1);
+		
 	}
 
 }
